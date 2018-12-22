@@ -4,7 +4,7 @@ from flask_pymongo import PyMongo
 import os 
 
 app = Flask(__name__)
-app.config["MONGO_URI"] = os.environ.get("MONGODB_URI")
+app.config["MONGO_URI"] = "mongodb://52.57.83.2:27017/hoodcops"
 mongo = PyMongo(app)
 
 @app.route("/", methods=["GET"])
@@ -16,6 +16,3 @@ def index():
 def process_subscription():
     pass
     
-
-if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=9000)
